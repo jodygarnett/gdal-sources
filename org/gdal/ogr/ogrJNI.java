@@ -25,6 +25,9 @@ public class ogrJNI {
   public final static native long new_TermProgressCallback();
   public final static native int TermProgressCallback_run(long jarg1, TermProgressCallback jarg1_, double jarg2, String jarg3);
   public final static native void delete_TermProgressCallback(long jarg1);
+  public final static native int GetGEOSVersionMajor();
+  public final static native int GetGEOSVersionMinor();
+  public final static native int GetGEOSVersionMicro();
   public final static native long new_StyleTable();
   public final static native void delete_StyleTable(long jarg1);
   public final static native int StyleTable_AddStyle(long jarg1, StyleTable jarg1_, String jarg2, String jarg3);
@@ -365,7 +368,8 @@ public class ogrJNI {
   public final static native long Geometry_Boundary(long jarg1, Geometry jarg1_);
   public final static native long Geometry_GetBoundary(long jarg1, Geometry jarg1_);
   public final static native long Geometry_ConvexHull(long jarg1, Geometry jarg1_);
-  public final static native long Geometry_MakeValid(long jarg1, Geometry jarg1_);
+  public final static native long Geometry_MakeValid__SWIG_0(long jarg1, Geometry jarg1_, java.util.Vector jarg2);
+  public final static native long Geometry_MakeValid__SWIG_1(long jarg1, Geometry jarg1_);
   public final static native long Geometry_Normalize(long jarg1, Geometry jarg1_);
   public final static native long Geometry_RemoveLowerDimensionSubGeoms(long jarg1, Geometry jarg1_);
   public final static native long Geometry_Buffer__SWIG_0(long jarg1, Geometry jarg1_, double jarg2, int jarg3);

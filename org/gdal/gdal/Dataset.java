@@ -284,6 +284,10 @@ public class Dataset extends MajorObject {
     return gdalJNI.Dataset_GetLayerCount(swigCPtr, this);
   }
 
+  public boolean IsLayerPrivate(int index) {
+    return gdalJNI.Dataset_IsLayerPrivate(swigCPtr, this, index);
+  }
+
   public Layer GetLayerByIndex(int index) {
     long cPtr = gdalJNI.Dataset_GetLayerByIndex(swigCPtr, this, index);
     Layer ret = null;

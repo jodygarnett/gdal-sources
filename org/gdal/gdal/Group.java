@@ -1,5 +1,7 @@
 package org.gdal.gdal;
 
+import org.gdal.ogr.Layer;
+
 public class Group {
   private long swigCPtr;
   protected boolean swigCMemOwn;
@@ -129,6 +131,24 @@ public class Group {
   public Group OpenGroupFromFullname(String name) {
     long cPtr = gdalJNI.Group_OpenGroupFromFullname__SWIG_1(swigCPtr, this, name);
     return (cPtr == 0) ? null : new Group(cPtr, true);
+  }
+
+  public java.util.Vector GetVectorLayerNames(java.util.Vector options) {
+    return gdalJNI.Group_GetVectorLayerNames__SWIG_0(swigCPtr, this, options);
+  }
+
+  public java.util.Vector GetVectorLayerNames() {
+    return gdalJNI.Group_GetVectorLayerNames__SWIG_1(swigCPtr, this);
+  }
+
+  public Layer OpenVectorLayer(String name, java.util.Vector options) {
+    long cPtr = gdalJNI.Group_OpenVectorLayer__SWIG_0(swigCPtr, this, name, options);
+    return (cPtr == 0) ? null : new Layer(cPtr, false);
+  }
+
+  public Layer OpenVectorLayer(String name) {
+    long cPtr = gdalJNI.Group_OpenVectorLayer__SWIG_1(swigCPtr, this, name);
+    return (cPtr == 0) ? null : new Layer(cPtr, false);
   }
 
   public Attribute GetAttribute(String name) {

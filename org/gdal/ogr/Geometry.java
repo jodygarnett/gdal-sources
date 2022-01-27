@@ -361,8 +361,13 @@ public class Geometry implements Cloneable {
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 
+  public Geometry MakeValid(java.util.Vector options) {
+    long cPtr = ogrJNI.Geometry_MakeValid__SWIG_0(swigCPtr, this, options);
+    return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
   public Geometry MakeValid() {
-    long cPtr = ogrJNI.Geometry_MakeValid(swigCPtr, this);
+    long cPtr = ogrJNI.Geometry_MakeValid__SWIG_1(swigCPtr, this);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 

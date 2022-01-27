@@ -103,8 +103,16 @@ public class MDArray {
     gdalJNI.MDArray_GetNoDataValueAsDouble(swigCPtr, this, val);
   }
 
+  public String GetNoDataValueAsString() {
+    return gdalJNI.MDArray_GetNoDataValueAsString(swigCPtr, this);
+  }
+
   public int SetNoDataValueDouble(double d) {
     return gdalJNI.MDArray_SetNoDataValueDouble(swigCPtr, this, d);
+  }
+
+  public int SetNoDataValueString(String nodata) {
+    return gdalJNI.MDArray_SetNoDataValueString(swigCPtr, this, nodata);
   }
 
   public int DeleteNoDataValue() {
@@ -190,49 +198,47 @@ public class MDArray {
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
   }
 
-  public Statistics GetStatistics(Dataset ds, boolean approx_ok, boolean force, ProgressCallback callback) {
-    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_0(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok, force, callback);
+  public Statistics GetStatistics(boolean approx_ok, boolean force, ProgressCallback callback) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_0(swigCPtr, this, approx_ok, force, callback);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
   }
 
-  public Statistics GetStatistics(Dataset ds, boolean approx_ok, boolean force) {
-    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_2(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok, force);
+  public Statistics GetStatistics(boolean approx_ok, boolean force) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_2(swigCPtr, this, approx_ok, force);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
   }
 
-  public Statistics GetStatistics(Dataset ds, boolean approx_ok) {
-    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_3(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok);
-    return (cPtr == 0) ? null : new Statistics(cPtr, false);
-  }
-
-  public Statistics GetStatistics(Dataset ds) {
-    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_4(swigCPtr, this, Dataset.getCPtr(ds), ds);
+  public Statistics GetStatistics(boolean approx_ok) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_3(swigCPtr, this, approx_ok);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
   }
 
   public Statistics GetStatistics() {
-    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_5(swigCPtr, this);
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_4(swigCPtr, this);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
   }
 
-  public Statistics ComputeStatistics(Dataset ds, boolean approx_ok, ProgressCallback callback) {
-    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_0(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok, callback);
+  public Statistics ComputeStatistics(boolean approx_ok, ProgressCallback callback) {
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_0(swigCPtr, this, approx_ok, callback);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
   }
 
-  public Statistics ComputeStatistics(Dataset ds, boolean approx_ok) {
-    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_2(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok);
-    return (cPtr == 0) ? null : new Statistics(cPtr, false);
-  }
-
-  public Statistics ComputeStatistics(Dataset ds) {
-    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_3(swigCPtr, this, Dataset.getCPtr(ds), ds);
+  public Statistics ComputeStatistics(boolean approx_ok) {
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_2(swigCPtr, this, approx_ok);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
   }
 
   public Statistics ComputeStatistics() {
-    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_4(swigCPtr, this);
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_3(swigCPtr, this);
     return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public boolean Cache(java.util.Vector options) {
+    return gdalJNI.MDArray_Cache__SWIG_0(swigCPtr, this, options);
+  }
+
+  public boolean Cache() {
+    return gdalJNI.MDArray_Cache__SWIG_1(swigCPtr, this);
   }
 
 }

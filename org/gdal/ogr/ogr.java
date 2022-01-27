@@ -16,6 +16,18 @@ public class ogr implements ogrConstants {
     return ogrJNI.GetUseExceptions();
   }
 
+  public static int GetGEOSVersionMajor() {
+    return ogrJNI.GetGEOSVersionMajor();
+  }
+
+  public static int GetGEOSVersionMinor() {
+    return ogrJNI.GetGEOSVersionMinor();
+  }
+
+  public static int GetGEOSVersionMicro() {
+    return ogrJNI.GetGEOSVersionMicro();
+  }
+
   public static Geometry CreateGeometryFromWkb(byte[] nLen, SpatialReference reference) {
     long cPtr = ogrJNI.CreateGeometryFromWkb__SWIG_0(nLen, SpatialReference.getCPtr(reference), reference);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);

@@ -90,4 +90,8 @@ public class CoordinateTransformation {
     return osrJNI.CoordinateTransformation_TransformPointsWithErrorCodes(swigCPtr, this, nCount);
   }
 
+  public void TransformBounds(double[] argout, double minx, double miny, double maxx, double maxy, int densify_pts) {
+    osrJNI.CoordinateTransformation_TransformBounds(swigCPtr, this, argout, minx, miny, maxx, maxy, densify_pts);
+  }
+
 }

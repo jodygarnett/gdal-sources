@@ -181,12 +181,24 @@ public class gdal {
     gdalJNI.SetConfigOption(pszKey, pszValue);
   }
 
+  public static void SetThreadLocalConfigOption(String pszKey, String pszValue) {
+    gdalJNI.SetThreadLocalConfigOption(pszKey, pszValue);
+  }
+
   public static String GetConfigOption(String pszKey, String pszDefault) {
     return gdalJNI.GetConfigOption__SWIG_0(pszKey, pszDefault);
   }
 
   public static String GetConfigOption(String pszKey) {
     return gdalJNI.GetConfigOption__SWIG_1(pszKey);
+  }
+
+  public static String GetThreadLocalConfigOption(String pszKey, String pszDefault) {
+    return gdalJNI.GetThreadLocalConfigOption__SWIG_0(pszKey, pszDefault);
+  }
+
+  public static String GetThreadLocalConfigOption(String pszKey) {
+    return gdalJNI.GetThreadLocalConfigOption__SWIG_1(pszKey);
   }
 
   public static String CPLBinaryToHex(byte[] nBytes) {

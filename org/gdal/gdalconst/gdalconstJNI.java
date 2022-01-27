@@ -130,6 +130,7 @@ public class gdalconstJNI {
   public final static native String DCAP_DEFAULT_FIELDS_get();
   public final static native String DCAP_NOTNULL_GEOMFIELDS_get();
   public final static native String DCAP_UNIQUE_FIELDS_get();
+  public final static native String DCAP_COORDINATE_EPOCH_get();
   public final static native String DIM_TYPE_HORIZONTAL_X_get();
   public final static native String DIM_TYPE_HORIZONTAL_Y_get();
   public final static native String DIM_TYPE_VERTICAL_get();

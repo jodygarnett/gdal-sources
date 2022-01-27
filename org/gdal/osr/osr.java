@@ -90,6 +90,14 @@ public class osr implements osrConstants {
     return osrJNI.GetPROJVersionMicro();
   }
 
+  public static boolean GetPROJEnableNetwork() {
+    return osrJNI.GetPROJEnableNetwork();
+  }
+
+  public static void SetPROJEnableNetwork(boolean enabled) {
+    osrJNI.SetPROJEnableNetwork(enabled);
+  }
+
   public static void SetPROJAuxDbPath(String utf8_path) {
     osrJNI.SetPROJAuxDbPath(utf8_path);
   }

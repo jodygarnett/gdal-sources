@@ -48,6 +48,9 @@ public class osrJNI {
   public final static native int SpatialReference_IsGeocentric(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_IsLocal(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_IsVertical(long jarg1, SpatialReference jarg1_);
+  public final static native boolean SpatialReference_IsDynamic(long jarg1, SpatialReference jarg1_);
+  public final static native double SpatialReference_GetCoordinateEpoch(long jarg1, SpatialReference jarg1_);
+  public final static native void SpatialReference_SetCoordinateEpoch(long jarg1, SpatialReference jarg1_, double jarg2);
   public final static native int SpatialReference_EPSGTreatsAsLatLong(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_EPSGTreatsAsNorthingEasting(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_SetAuthority(long jarg1, SpatialReference jarg1_, String jarg2, String jarg3, int jarg4);
@@ -211,6 +214,7 @@ public class osrJNI {
   public final static native int CoordinateTransformation_TransformPointWithErrorCode(long jarg1, CoordinateTransformation jarg1_, double[] jarg2, double jarg3, double jarg4, double jarg5, double jarg6);
   public final static native void CoordinateTransformation_TransformPoints(long jarg1, CoordinateTransformation jarg1_, double[][] jarg2);
   public final static native int[] CoordinateTransformation_TransformPointsWithErrorCodes(long jarg1, CoordinateTransformation jarg1_, double[][] jarg2);
+  public final static native void CoordinateTransformation_TransformBounds(long jarg1, CoordinateTransformation jarg1_, double[] jarg2, double jarg3, double jarg4, double jarg5, double jarg6, int jarg7);
   public final static native long CreateCoordinateTransformation__SWIG_0(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_, long jarg3, CoordinateTransformationOptions jarg3_);
   public final static native long CreateCoordinateTransformation__SWIG_1(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_);
   public final static native void SetPROJSearchPath(String jarg1);
@@ -219,6 +223,8 @@ public class osrJNI {
   public final static native int GetPROJVersionMajor();
   public final static native int GetPROJVersionMinor();
   public final static native int GetPROJVersionMicro();
+  public final static native boolean GetPROJEnableNetwork();
+  public final static native void SetPROJEnableNetwork(boolean jarg1);
   public final static native void SetPROJAuxDbPath(String jarg1);
   public final static native void SetPROJAuxDbPaths(java.util.Vector jarg1);
   public final static native java.util.Vector GetPROJAuxDbPaths();

@@ -62,13 +62,18 @@ public class ExtendedDataType {
     return (cPtr == 0) ? null : new ExtendedDataType(cPtr, true);
   }
 
+  public static ExtendedDataType CreateString(long nMaxStringLength, ExtendedDataTypeSubType eSubType) {
+    long cPtr = gdalJNI.ExtendedDataType_CreateString__SWIG_0(nMaxStringLength, eSubType.swigValue());
+    return (cPtr == 0) ? null : new ExtendedDataType(cPtr, true);
+  }
+
   public static ExtendedDataType CreateString(long nMaxStringLength) {
-    long cPtr = gdalJNI.ExtendedDataType_CreateString__SWIG_0(nMaxStringLength);
+    long cPtr = gdalJNI.ExtendedDataType_CreateString__SWIG_1(nMaxStringLength);
     return (cPtr == 0) ? null : new ExtendedDataType(cPtr, true);
   }
 
   public static ExtendedDataType CreateString() {
-    long cPtr = gdalJNI.ExtendedDataType_CreateString__SWIG_1();
+    long cPtr = gdalJNI.ExtendedDataType_CreateString__SWIG_2();
     return (cPtr == 0) ? null : new ExtendedDataType(cPtr, true);
   }
 
@@ -90,6 +95,10 @@ public class ExtendedDataType {
 
   public long GetMaxStringLength() {
     return gdalJNI.ExtendedDataType_GetMaxStringLength(swigCPtr, this);
+  }
+
+  public ExtendedDataTypeSubType GetSubType() {
+    return ExtendedDataTypeSubType.swigToEnum(gdalJNI.ExtendedDataType_GetSubType(swigCPtr, this));
   }
 
   public boolean CanConvertTo(ExtendedDataType other) {

@@ -118,6 +118,7 @@ public interface gdalconstConstants {
   public final static String DCAP_DEFAULT_FIELDS = gdalconstJNI.DCAP_DEFAULT_FIELDS_get();
   public final static String DCAP_NOTNULL_GEOMFIELDS = gdalconstJNI.DCAP_NOTNULL_GEOMFIELDS_get();
   public final static String DCAP_UNIQUE_FIELDS = gdalconstJNI.DCAP_UNIQUE_FIELDS_get();
+  public final static String DCAP_COORDINATE_EPOCH = gdalconstJNI.DCAP_COORDINATE_EPOCH_get();
   public final static String DIM_TYPE_HORIZONTAL_X = gdalconstJNI.DIM_TYPE_HORIZONTAL_X_get();
   public final static String DIM_TYPE_HORIZONTAL_Y = gdalconstJNI.DIM_TYPE_HORIZONTAL_Y_get();
   public final static String DIM_TYPE_VERTICAL = gdalconstJNI.DIM_TYPE_VERTICAL_get();

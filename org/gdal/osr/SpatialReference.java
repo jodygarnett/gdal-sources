@@ -161,6 +161,18 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_IsVertical(swigCPtr, this);
   }
 
+  public boolean IsDynamic() {
+    return osrJNI.SpatialReference_IsDynamic(swigCPtr, this);
+  }
+
+  public double GetCoordinateEpoch() {
+    return osrJNI.SpatialReference_GetCoordinateEpoch(swigCPtr, this);
+  }
+
+  public void SetCoordinateEpoch(double coordinateEpoch) {
+    osrJNI.SpatialReference_SetCoordinateEpoch(swigCPtr, this, coordinateEpoch);
+  }
+
   public int EPSGTreatsAsLatLong() {
     return osrJNI.SpatialReference_EPSGTreatsAsLatLong(swigCPtr, this);
   }
