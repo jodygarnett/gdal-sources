@@ -686,12 +686,12 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_ExportToProj4(swigCPtr, this, argout);
   }
 
-  public int ExportToPCI(String[] proj, String[] units, double[] parms) {
-    return osrJNI.SpatialReference_ExportToPCI(swigCPtr, this, proj, units, parms);
+  public int ExportToPCI(String[] proj, String[] units, double[] params) {
+    return osrJNI.SpatialReference_ExportToPCI(swigCPtr, this, proj, units, params);
   }
 
-  public int ExportToUSGS(int[] code, int[] zone, double[] parms, int[] datum) {
-    return osrJNI.SpatialReference_ExportToUSGS(swigCPtr, this, code, zone, parms, datum);
+  public int ExportToUSGS(int[] code, int[] zone, double[] params, int[] datum) {
+    return osrJNI.SpatialReference_ExportToUSGS(swigCPtr, this, code, zone, params, datum);
   }
 
   public int ExportToXML(String[] argout, String dialect) {

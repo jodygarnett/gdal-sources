@@ -12,6 +12,7 @@ import org.gdal.gdal.gdalJNI;
 public class gnmJNI {
   public final static native void UseExceptions();
   public final static native void DontUseExceptions();
+  public final static native boolean GetUseExceptions();
 
 
   static {

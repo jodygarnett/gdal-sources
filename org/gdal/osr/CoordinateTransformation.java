@@ -40,7 +40,18 @@ public class CoordinateTransformation {
   /* New in GDAL 1.10 */
   public static CoordinateTransformation CreateCoordinateTransformation(SpatialReference src, SpatialReference dst)
   {
-      return osr.CreateCoordinateTransformation(src, dst);
+      CoordinateTransformation ct = osr.CreateCoordinateTransformation(src, dst);
+      if( ct == null && osr.GetUseExceptions() )
+        throw new RuntimeException("Cannot create CoordinateTransformation: " + org.gdal.gdal.gdal.GetLastErrorMsg());
+      return ct;
+  }
+
+  public static CoordinateTransformation CreateCoordinateTransformation(SpatialReference src, SpatialReference dst, CoordinateTransformationOptions options)
+  {
+      CoordinateTransformation ct = osr.CreateCoordinateTransformation(src, dst, options);
+      if( ct == null && osr.GetUseExceptions() )
+        throw new RuntimeException("Cannot create CoordinateTransformation: " + org.gdal.gdal.gdal.GetLastErrorMsg());
+      return ct;
   }
 
   public CoordinateTransformation(SpatialReference src, SpatialReference dst) {
@@ -67,8 +78,16 @@ public class CoordinateTransformation {
     osrJNI.CoordinateTransformation_TransformPoint__SWIG_4(swigCPtr, this, argout, x, y, z, t);
   }
 
+  public int TransformPointWithErrorCode(double[] argout, double x, double y, double z, double t) {
+    return osrJNI.CoordinateTransformation_TransformPointWithErrorCode(swigCPtr, this, argout, x, y, z, t);
+  }
+
   public void TransformPoints(double[][] nCount) {
     osrJNI.CoordinateTransformation_TransformPoints(swigCPtr, this, nCount);
+  }
+
+  public int[] TransformPointsWithErrorCodes(double[][] nCount) {
+    return osrJNI.CoordinateTransformation_TransformPointsWithErrorCodes(swigCPtr, this, nCount);
   }
 
 }

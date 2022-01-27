@@ -5,6 +5,7 @@ import org.gdal.ogr.Geometry;
 import org.gdal.ogr.StyleTable;
 import org.gdal.ogr.Layer;
 import org.gdal.ogr.Feature;
+import org.gdal.ogr.FieldDomain;
 
 public class Dataset extends MajorObject {
   private transient long swigCPtr;
@@ -122,8 +123,8 @@ public class Dataset extends MajorObject {
     return gdalJNI.Dataset_SetProjection(swigCPtr, this, prj);
   }
 
-  public void SetSpatialRef(SpatialReference srs) {
-    gdalJNI.Dataset_SetSpatialRef(swigCPtr, this, SpatialReference.getCPtr(srs), srs);
+  public int SetSpatialRef(SpatialReference srs) {
+    return gdalJNI.Dataset_SetSpatialRef(swigCPtr, this, SpatialReference.getCPtr(srs), srs);
   }
 
   public void GetGeoTransform(double[] argout) {
@@ -381,6 +382,15 @@ public class Dataset extends MajorObject {
 
   public void ClearStatistics() {
     gdalJNI.Dataset_ClearStatistics(swigCPtr, this);
+  }
+
+  public FieldDomain GetFieldDomain(String name) {
+    long cPtr = gdalJNI.Dataset_GetFieldDomain(swigCPtr, this, name);
+    return (cPtr == 0) ? null : new FieldDomain(cPtr, false);
+  }
+
+  public boolean AddFieldDomain(FieldDomain fieldDomain) {
+    return gdalJNI.Dataset_AddFieldDomain(swigCPtr, this, FieldDomain.getCPtr(fieldDomain), fieldDomain);
   }
 
   public int ReadRaster_Direct(int xoff, int yoff, int xsize, int ysize, int buf_xsize, int buf_ysize, int buf_type, java.nio.ByteBuffer nioBuffer, int[] band_list, int nPixelSpace, int nLineSpace, int nBandSpace) {

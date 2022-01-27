@@ -8,6 +8,7 @@ import org.gdal.gdal.gdalJNI;
 public class ogrJNI {
   public final static native void UseExceptions();
   public final static native void DontUseExceptions();
+  public final static native boolean GetUseExceptions();
 
 
   static {
@@ -270,6 +271,8 @@ public class ogrJNI {
   public final static native String FieldDefn_GetDefault(long jarg1, FieldDefn jarg1_);
   public final static native void FieldDefn_SetDefault(long jarg1, FieldDefn jarg1_, String jarg2);
   public final static native int FieldDefn_IsDefaultDriverSpecific(long jarg1, FieldDefn jarg1_);
+  public final static native String FieldDefn_GetDomainName(long jarg1, FieldDefn jarg1_);
+  public final static native void FieldDefn_SetDomainName(long jarg1, FieldDefn jarg1_, String jarg2);
   public final static native void delete_GeomFieldDefn(long jarg1);
   public final static native long new_GeomFieldDefn__SWIG_0(String jarg1, int jarg2);
   public final static native long new_GeomFieldDefn__SWIG_1(String jarg1);
@@ -363,6 +366,7 @@ public class ogrJNI {
   public final static native long Geometry_GetBoundary(long jarg1, Geometry jarg1_);
   public final static native long Geometry_ConvexHull(long jarg1, Geometry jarg1_);
   public final static native long Geometry_MakeValid(long jarg1, Geometry jarg1_);
+  public final static native long Geometry_Normalize(long jarg1, Geometry jarg1_);
   public final static native long Geometry_RemoveLowerDimensionSubGeoms(long jarg1, Geometry jarg1_);
   public final static native long Geometry_Buffer__SWIG_0(long jarg1, Geometry jarg1_, double jarg2, int jarg3);
   public final static native long Geometry_Buffer__SWIG_1(long jarg1, Geometry jarg1_, double jarg2);
@@ -400,7 +404,7 @@ public class ogrJNI {
   public final static native void Geometry_GetEnvelope3D(long jarg1, Geometry jarg1_, double[] jarg2);
   public final static native long Geometry_Centroid(long jarg1, Geometry jarg1_);
   public final static native long Geometry_PointOnSurface(long jarg1, Geometry jarg1_);
-  public final static native int Geometry_WkbSize(long jarg1, Geometry jarg1_);
+  public final static native long Geometry_WkbSize(long jarg1, Geometry jarg1_);
   public final static native int Geometry_GetCoordinateDimension(long jarg1, Geometry jarg1_);
   public final static native int Geometry_CoordinateDimension(long jarg1, Geometry jarg1_);
   public final static native int Geometry_Is3D(long jarg1, Geometry jarg1_);
@@ -418,13 +422,34 @@ public class ogrJNI {
   public final static native long Geometry_GetCurveGeometry__SWIG_1(long jarg1, Geometry jarg1_);
   public final static native long Geometry_Value(long jarg1, Geometry jarg1_, double jarg2);
   public final static native long Geometry_Transform__SWIG_1(long jarg1, Geometry jarg1_, long jarg2, GeomTransformer jarg2_);
+  public final static native long Geometry_CreatePreparedGeometry(long jarg1, Geometry jarg1_);
   public final static native long new_Geometry__SWIG_0(int jarg1, String jarg2, byte[] jarg3, String jarg5);
   public final static native long new_Geometry__SWIG_1(int jarg1);
   public final static native String Geometry_ExportToWkt__SWIG_1(long jarg1, Geometry jarg1_);
+  public final static native void delete_PreparedGeometry(long jarg1);
+  public final static native boolean PreparedGeometry_Intersects(long jarg1, PreparedGeometry jarg1_, long jarg2, Geometry jarg2_);
+  public final static native boolean PreparedGeometry_Contains(long jarg1, PreparedGeometry jarg1_, long jarg2, Geometry jarg2_);
   public final static native long new_GeomTransformer__SWIG_0(long jarg1, CoordinateTransformation jarg1_, java.util.Vector jarg2);
   public final static native long new_GeomTransformer__SWIG_1(long jarg1, CoordinateTransformation jarg1_);
   public final static native void delete_GeomTransformer(long jarg1);
   public final static native long GeomTransformer_Transform(long jarg1, GeomTransformer jarg1_, long jarg2, Geometry jarg2_);
+  public final static native void delete_FieldDomain(long jarg1);
+  public final static native String FieldDomain_GetName(long jarg1, FieldDomain jarg1_);
+  public final static native String FieldDomain_GetDescription(long jarg1, FieldDomain jarg1_);
+  public final static native int FieldDomain_GetFieldType(long jarg1, FieldDomain jarg1_);
+  public final static native int FieldDomain_GetFieldSubType(long jarg1, FieldDomain jarg1_);
+  public final static native int FieldDomain_GetDomainType(long jarg1, FieldDomain jarg1_);
+  public final static native int FieldDomain_GetSplitPolicy(long jarg1, FieldDomain jarg1_);
+  public final static native void FieldDomain_SetSplitPolicy(long jarg1, FieldDomain jarg1_, int jarg2);
+  public final static native int FieldDomain_GetMergePolicy(long jarg1, FieldDomain jarg1_);
+  public final static native void FieldDomain_SetMergePolicy(long jarg1, FieldDomain jarg1_, int jarg2);
+  public final static native double FieldDomain_GetMinAsDouble(long jarg1, FieldDomain jarg1_);
+  public final static native boolean FieldDomain_IsMinInclusive(long jarg1, FieldDomain jarg1_);
+  public final static native double FieldDomain_GetMaxAsDouble(long jarg1, FieldDomain jarg1_);
+  public final static native boolean FieldDomain_IsMaxInclusive(long jarg1, FieldDomain jarg1_);
+  public final static native String FieldDomain_GetGlob(long jarg1, FieldDomain jarg1_);
+  public final static native long CreateRangeFieldDomain(String jarg1, String jarg2, int jarg3, int jarg4, double jarg5, boolean jarg6, double jarg7, double jarg8);
+  public final static native long CreateGlobFieldDomain(String jarg1, String jarg2, int jarg3, int jarg4, String jarg5);
   public final static native int GetDriverCount();
   public final static native int GetOpenDSCount();
   public final static native int SetGenerate_DB2_V72_BYTE_ORDER(int jarg1);

@@ -5,10 +5,12 @@ import org.gdal.ogr.Geometry;
 import org.gdal.ogr.StyleTable;
 import org.gdal.ogr.Layer;
 import org.gdal.ogr.Feature;
+import org.gdal.ogr.FieldDomain;
 
 public class gdalJNI {
   public final static native void UseExceptions();
   public final static native void DontUseExceptions();
+  public final static native boolean GetUseExceptions();
 
   private static boolean available = false;
 
@@ -188,7 +190,7 @@ public class gdalJNI {
   public final static native String Dataset_GetProjectionRef(long jarg1, Dataset jarg1_);
   public final static native long Dataset_GetSpatialRef(long jarg1, Dataset jarg1_);
   public final static native int Dataset_SetProjection(long jarg1, Dataset jarg1_, String jarg2);
-  public final static native void Dataset_SetSpatialRef(long jarg1, Dataset jarg1_, long jarg2, SpatialReference jarg2_);
+  public final static native int Dataset_SetSpatialRef(long jarg1, Dataset jarg1_, long jarg2, SpatialReference jarg2_);
   public final static native void Dataset_GetGeoTransform(long jarg1, Dataset jarg1_, double[] jarg2);
   public final static native int Dataset_SetGeoTransform(long jarg1, Dataset jarg1_, double[] jarg2);
   public final static native int Dataset_BuildOverviews__SWIG_0(long jarg1, Dataset jarg1_, String jarg2, int[] jarg3, ProgressCallback jarg5);
@@ -236,6 +238,8 @@ public class gdalJNI {
   public final static native int Dataset_CommitTransaction(long jarg1, Dataset jarg1_);
   public final static native int Dataset_RollbackTransaction(long jarg1, Dataset jarg1_);
   public final static native void Dataset_ClearStatistics(long jarg1, Dataset jarg1_);
+  public final static native long Dataset_GetFieldDomain(long jarg1, Dataset jarg1_, String jarg2);
+  public final static native boolean Dataset_AddFieldDomain(long jarg1, Dataset jarg1_, long jarg2, FieldDomain jarg2_);
   public final static native int Dataset_ReadRaster_Direct__SWIG_0(long jarg1, Dataset jarg1_, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, int jarg7, int jarg8, java.nio.ByteBuffer jarg9, int[] jarg11, int jarg13, int jarg14, int jarg15);
   public final static native int Dataset_ReadRaster_Direct__SWIG_1(long jarg1, Dataset jarg1_, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, int jarg7, int jarg8, java.nio.ByteBuffer jarg9, int[] jarg11, int jarg13, int jarg14);
   public final static native int Dataset_ReadRaster_Direct__SWIG_2(long jarg1, Dataset jarg1_, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, int jarg7, int jarg8, java.nio.ByteBuffer jarg9, int[] jarg11, int jarg13);
@@ -330,9 +334,13 @@ public class gdalJNI {
   public final static native int MDArray_SetNoDataValueDouble(long jarg1, MDArray jarg1_, double jarg2);
   public final static native int MDArray_DeleteNoDataValue(long jarg1, MDArray jarg1_);
   public final static native void MDArray_GetOffset(long jarg1, MDArray jarg1_, Double[] jarg2);
+  public final static native int MDArray_GetOffsetStorageType(long jarg1, MDArray jarg1_);
   public final static native void MDArray_GetScale(long jarg1, MDArray jarg1_, Double[] jarg2);
-  public final static native int MDArray_SetOffset(long jarg1, MDArray jarg1_, double jarg2);
-  public final static native int MDArray_SetScale(long jarg1, MDArray jarg1_, double jarg2);
+  public final static native int MDArray_GetScaleStorageType(long jarg1, MDArray jarg1_);
+  public final static native int MDArray_SetOffset__SWIG_0(long jarg1, MDArray jarg1_, double jarg2, int jarg3);
+  public final static native int MDArray_SetOffset__SWIG_1(long jarg1, MDArray jarg1_, double jarg2);
+  public final static native int MDArray_SetScale__SWIG_0(long jarg1, MDArray jarg1_, double jarg2, int jarg3);
+  public final static native int MDArray_SetScale__SWIG_1(long jarg1, MDArray jarg1_, double jarg2);
   public final static native int MDArray_SetUnit(long jarg1, MDArray jarg1_, String jarg2);
   public final static native String MDArray_GetUnit(long jarg1, MDArray jarg1_);
   public final static native int MDArray_SetSpatialRef(long jarg1, MDArray jarg1_, long jarg2, SpatialReference jarg2_);

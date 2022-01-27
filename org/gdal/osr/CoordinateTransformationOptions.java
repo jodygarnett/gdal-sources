@@ -69,4 +69,12 @@ public class CoordinateTransformationOptions {
     return osrJNI.CoordinateTransformationOptions_SetOperation(swigCPtr, this, operation);
   }
 
+  public boolean SetDesiredAccuracy(double accuracy) {
+    return osrJNI.CoordinateTransformationOptions_SetDesiredAccuracy(swigCPtr, this, accuracy);
+  }
+
+  public boolean SetBallparkAllowed(boolean allowBallpark) {
+    return osrJNI.CoordinateTransformationOptions_SetBallparkAllowed(swigCPtr, this, allowBallpark);
+  }
+
 }

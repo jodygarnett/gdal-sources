@@ -115,16 +115,32 @@ public class MDArray {
     gdalJNI.MDArray_GetOffset(swigCPtr, this, val);
   }
 
+  public int GetOffsetStorageType() {
+    return gdalJNI.MDArray_GetOffsetStorageType(swigCPtr, this);
+  }
+
   public void GetScale(Double[] val) {
     gdalJNI.MDArray_GetScale(swigCPtr, this, val);
   }
 
+  public int GetScaleStorageType() {
+    return gdalJNI.MDArray_GetScaleStorageType(swigCPtr, this);
+  }
+
+  public int SetOffset(double val, int storageType) {
+    return gdalJNI.MDArray_SetOffset__SWIG_0(swigCPtr, this, val, storageType);
+  }
+
   public int SetOffset(double val) {
-    return gdalJNI.MDArray_SetOffset(swigCPtr, this, val);
+    return gdalJNI.MDArray_SetOffset__SWIG_1(swigCPtr, this, val);
+  }
+
+  public int SetScale(double val, int storageType) {
+    return gdalJNI.MDArray_SetScale__SWIG_0(swigCPtr, this, val, storageType);
   }
 
   public int SetScale(double val) {
-    return gdalJNI.MDArray_SetScale(swigCPtr, this, val);
+    return gdalJNI.MDArray_SetScale__SWIG_1(swigCPtr, this, val);
   }
 
   public int SetUnit(String unit) {

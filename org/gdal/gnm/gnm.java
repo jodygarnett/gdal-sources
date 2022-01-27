@@ -16,4 +16,8 @@ public class gnm implements gnmConstants {
     gnmJNI.DontUseExceptions();
   }
 
+  public static boolean GetUseExceptions() {
+    return gnmJNI.GetUseExceptions();
+  }
+
 }

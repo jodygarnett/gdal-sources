@@ -366,6 +366,11 @@ public class Geometry implements Cloneable {
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 
+  public Geometry Normalize() {
+    long cPtr = ogrJNI.Geometry_Normalize(swigCPtr, this);
+    return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
   public Geometry RemoveLowerDimensionSubGeoms() {
     long cPtr = ogrJNI.Geometry_RemoveLowerDimensionSubGeoms(swigCPtr, this);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
@@ -526,7 +531,7 @@ public class Geometry implements Cloneable {
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 
-  public int WkbSize() {
+  public long WkbSize() {
     return ogrJNI.Geometry_WkbSize(swigCPtr, this);
   }
 
@@ -603,6 +608,11 @@ public class Geometry implements Cloneable {
   public Geometry Transform(GeomTransformer transformer) {
     long cPtr = ogrJNI.Geometry_Transform__SWIG_1(swigCPtr, this, GeomTransformer.getCPtr(transformer), transformer);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
+  public PreparedGeometry CreatePreparedGeometry() {
+    long cPtr = ogrJNI.Geometry_CreatePreparedGeometry(swigCPtr, this);
+    return (cPtr == 0) ? null : new PreparedGeometry(cPtr, true);
   }
 
   public Geometry(int type, String wkt, byte[] nLen, String gml) {

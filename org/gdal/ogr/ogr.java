@@ -12,6 +12,10 @@ public class ogr implements ogrConstants {
     ogrJNI.DontUseExceptions();
   }
 
+  public static boolean GetUseExceptions() {
+    return ogrJNI.GetUseExceptions();
+  }
+
   public static Geometry CreateGeometryFromWkb(byte[] nLen, SpatialReference reference) {
     long cPtr = ogrJNI.CreateGeometryFromWkb__SWIG_0(nLen, SpatialReference.getCPtr(reference), reference);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
@@ -105,6 +109,16 @@ public class ogr implements ogrConstants {
   public static Geometry ForceTo(Geometry geom_in, int eTargetType) {
     long cPtr = ogrJNI.ForceTo__SWIG_1(Geometry.getCPtr(geom_in), geom_in, eTargetType);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
+  public static FieldDomain CreateRangeFieldDomain(String name, String description, int type, int subtype, double min, boolean minIsInclusive, double max, double maxIsInclusive) {
+    long cPtr = ogrJNI.CreateRangeFieldDomain(name, description, type, subtype, min, minIsInclusive, max, maxIsInclusive);
+    return (cPtr == 0) ? null : new FieldDomain(cPtr, true);
+  }
+
+  public static FieldDomain CreateGlobFieldDomain(String name, String description, int type, int subtype, String glob) {
+    long cPtr = ogrJNI.CreateGlobFieldDomain(name, description, type, subtype, glob);
+    return (cPtr == 0) ? null : new FieldDomain(cPtr, true);
   }
 
   public static int GetDriverCount() {

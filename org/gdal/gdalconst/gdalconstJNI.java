@@ -36,6 +36,7 @@ public class gdalconstJNI {
   public final static native int GRIORA_CubicSpline_get();
   public final static native int GRIORA_Lanczos_get();
   public final static native int GRIORA_Average_get();
+  public final static native int GRIORA_RMS_get();
   public final static native int GRIORA_Mode_get();
   public final static native int GRIORA_Gauss_get();
   public final static native int GCI_Undefined_get();
@@ -61,12 +62,14 @@ public class gdalconstJNI {
   public final static native int GRA_CubicSpline_get();
   public final static native int GRA_Lanczos_get();
   public final static native int GRA_Average_get();
+  public final static native int GRA_RMS_get();
   public final static native int GRA_Mode_get();
   public final static native int GRA_Max_get();
   public final static native int GRA_Min_get();
   public final static native int GRA_Med_get();
   public final static native int GRA_Q1_get();
   public final static native int GRA_Q3_get();
+  public final static native int GRA_Sum_get();
   public final static native int GPI_Gray_get();
   public final static native int GPI_RGB_get();
   public final static native int GPI_CMYK_get();
@@ -134,6 +137,7 @@ public class gdalconstJNI {
   public final static native String DIM_TYPE_PARAMETRIC_get();
   public final static native int CPLES_BackslashQuotable_get();
   public final static native int CPLES_XML_get();
+  public final static native int CPLES_XML_BUT_QUOTES_get();
   public final static native int CPLES_URL_get();
   public final static native int CPLES_SQL_get();
   public final static native int CPLES_CSV_get();

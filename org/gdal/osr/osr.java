@@ -9,6 +9,10 @@ public class osr implements osrConstants {
     osrJNI.DontUseExceptions();
   }
 
+  public static boolean GetUseExceptions() {
+    return osrJNI.GetUseExceptions();
+  }
+
 
 
     /* Uninstanciable class */
@@ -84,6 +88,18 @@ public class osr implements osrConstants {
 
   public static int GetPROJVersionMicro() {
     return osrJNI.GetPROJVersionMicro();
+  }
+
+  public static void SetPROJAuxDbPath(String utf8_path) {
+    osrJNI.SetPROJAuxDbPath(utf8_path);
+  }
+
+  public static void SetPROJAuxDbPaths(java.util.Vector paths) {
+    osrJNI.SetPROJAuxDbPaths(paths);
+  }
+
+  public static java.util.Vector GetPROJAuxDbPaths() {
+    return osrJNI.GetPROJAuxDbPaths();
   }
 
 }

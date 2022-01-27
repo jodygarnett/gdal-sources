@@ -177,4 +177,12 @@ public class FieldDefn {
     return ogrJNI.FieldDefn_IsDefaultDriverSpecific(swigCPtr, this);
   }
 
+  public String GetDomainName() {
+    return ogrJNI.FieldDefn_GetDomainName(swigCPtr, this);
+  }
+
+  public void SetDomainName(String name) {
+    ogrJNI.FieldDefn_SetDomainName(swigCPtr, this, name);
+  }
+
 }

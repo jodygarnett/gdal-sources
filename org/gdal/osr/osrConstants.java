@@ -177,4 +177,20 @@ public interface osrConstants {
   public final static int OAMS_TRADITIONAL_GIS_ORDER = 0;
   public final static int OAMS_AUTHORITY_COMPLIANT = 1;
   public final static int OAMS_CUSTOM = 2;
+  public final static int PROJ_ERR_INVALID_OP = 1024;
+  public final static int PROJ_ERR_INVALID_OP_WRONG_SYNTAX = 1025;
+  public final static int PROJ_ERR_INVALID_OP_MISSING_ARG = 1026;
+  public final static int PROJ_ERR_INVALID_OP_ILLEGAL_ARG_VALUE = 1027;
+  public final static int PROJ_ERR_INVALID_OP_MUTUALLY_EXCLUSIVE_ARGS = 1028;
+  public final static int PROJ_ERR_INVALID_OP_FILE_NOT_FOUND_OR_INVALID = 1029;
+  public final static int PROJ_ERR_COORD_TRANSFM = 2048;
+  public final static int PROJ_ERR_COORD_TRANSFM_INVALID_COORD = 2049;
+  public final static int PROJ_ERR_COORD_TRANSFM_OUTSIDE_PROJECTION_DOMAIN = 2050;
+  public final static int PROJ_ERR_COORD_TRANSFM_NO_OPERATION = 2051;
+  public final static int PROJ_ERR_COORD_TRANSFM_OUTSIDE_GRID = 2052;
+  public final static int PROJ_ERR_COORD_TRANSFM_GRID_AT_NODATA = 2053;
+  public final static int PROJ_ERR_OTHER = 4096;
+  public final static int PROJ_ERR_OTHER_API_MISUSE = 4097;
+  public final static int PROJ_ERR_OTHER_NO_INVERSE_OP = 4098;
+  public final static int PROJ_ERR_OTHER_NETWORK_ERROR = 4099;
 }

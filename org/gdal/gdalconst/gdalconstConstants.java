@@ -24,6 +24,7 @@ public interface gdalconstConstants {
   public final static int GRIORA_CubicSpline = gdalconstJNI.GRIORA_CubicSpline_get();
   public final static int GRIORA_Lanczos = gdalconstJNI.GRIORA_Lanczos_get();
   public final static int GRIORA_Average = gdalconstJNI.GRIORA_Average_get();
+  public final static int GRIORA_RMS = gdalconstJNI.GRIORA_RMS_get();
   public final static int GRIORA_Mode = gdalconstJNI.GRIORA_Mode_get();
   public final static int GRIORA_Gauss = gdalconstJNI.GRIORA_Gauss_get();
   public final static int GCI_Undefined = gdalconstJNI.GCI_Undefined_get();
@@ -49,12 +50,14 @@ public interface gdalconstConstants {
   public final static int GRA_CubicSpline = gdalconstJNI.GRA_CubicSpline_get();
   public final static int GRA_Lanczos = gdalconstJNI.GRA_Lanczos_get();
   public final static int GRA_Average = gdalconstJNI.GRA_Average_get();
+  public final static int GRA_RMS = gdalconstJNI.GRA_RMS_get();
   public final static int GRA_Mode = gdalconstJNI.GRA_Mode_get();
   public final static int GRA_Max = gdalconstJNI.GRA_Max_get();
   public final static int GRA_Min = gdalconstJNI.GRA_Min_get();
   public final static int GRA_Med = gdalconstJNI.GRA_Med_get();
   public final static int GRA_Q1 = gdalconstJNI.GRA_Q1_get();
   public final static int GRA_Q3 = gdalconstJNI.GRA_Q3_get();
+  public final static int GRA_Sum = gdalconstJNI.GRA_Sum_get();
   public final static int GPI_Gray = gdalconstJNI.GPI_Gray_get();
   public final static int GPI_RGB = gdalconstJNI.GPI_RGB_get();
   public final static int GPI_CMYK = gdalconstJNI.GPI_CMYK_get();
@@ -122,6 +125,7 @@ public interface gdalconstConstants {
   public final static String DIM_TYPE_PARAMETRIC = gdalconstJNI.DIM_TYPE_PARAMETRIC_get();
   public final static int CPLES_BackslashQuotable = gdalconstJNI.CPLES_BackslashQuotable_get();
   public final static int CPLES_XML = gdalconstJNI.CPLES_XML_get();
+  public final static int CPLES_XML_BUT_QUOTES = gdalconstJNI.CPLES_XML_BUT_QUOTES_get();
   public final static int CPLES_URL = gdalconstJNI.CPLES_URL_get();
   public final static int CPLES_SQL = gdalconstJNI.CPLES_SQL_get();
   public final static int CPLES_CSV = gdalconstJNI.CPLES_CSV_get();

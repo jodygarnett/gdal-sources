@@ -5,6 +5,7 @@ import org.gdal.ogr.Geometry;
 import org.gdal.ogr.StyleTable;
 import org.gdal.ogr.Layer;
 import org.gdal.ogr.Feature;
+import org.gdal.ogr.FieldDomain;
 
 public class gdal {
   public static void UseExceptions() {
@@ -13,6 +14,10 @@ public class gdal {
 
   public static void DontUseExceptions() {
     gdalJNI.DontUseExceptions();
+  }
+
+  public static boolean GetUseExceptions() {
+    return gdalJNI.GetUseExceptions();
   }
 
 
