@@ -366,6 +366,11 @@ public class Geometry implements Cloneable {
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 
+  public Geometry RemoveLowerDimensionSubGeoms() {
+    long cPtr = ogrJNI.Geometry_RemoveLowerDimensionSubGeoms(swigCPtr, this);
+    return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
   public Geometry Buffer(double distance, int quadsecs) {
     long cPtr = ogrJNI.Geometry_Buffer__SWIG_0(swigCPtr, this, distance, quadsecs);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
@@ -479,7 +484,7 @@ public class Geometry implements Cloneable {
   }
 
   public int Transform(CoordinateTransformation trans) {
-    return ogrJNI.Geometry_Transform(swigCPtr, this, CoordinateTransformation.getCPtr(trans), trans);
+    return ogrJNI.Geometry_Transform__SWIG_0(swigCPtr, this, CoordinateTransformation.getCPtr(trans), trans);
   }
 
   public SpatialReference GetSpatialReference() {
@@ -592,6 +597,11 @@ public class Geometry implements Cloneable {
 
   public Geometry Value(double dfDistance) {
     long cPtr = ogrJNI.Geometry_Value(swigCPtr, this, dfDistance);
+    return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
+  public Geometry Transform(GeomTransformer transformer) {
+    long cPtr = ogrJNI.Geometry_Transform__SWIG_1(swigCPtr, this, GeomTransformer.getCPtr(transformer), transformer);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 

@@ -62,4 +62,28 @@ public class osr implements osrConstants {
     return (cPtr == 0) ? null : new CoordinateTransformation(cPtr, true);
   }
 
+  public static void SetPROJSearchPath(String utf8_path) {
+    osrJNI.SetPROJSearchPath(utf8_path);
+  }
+
+  public static void SetPROJSearchPaths(java.util.Vector paths) {
+    osrJNI.SetPROJSearchPaths(paths);
+  }
+
+  public static java.util.Vector GetPROJSearchPaths() {
+    return osrJNI.GetPROJSearchPaths();
+  }
+
+  public static int GetPROJVersionMajor() {
+    return osrJNI.GetPROJVersionMajor();
+  }
+
+  public static int GetPROJVersionMinor() {
+    return osrJNI.GetPROJVersionMinor();
+  }
+
+  public static int GetPROJVersionMicro() {
+    return osrJNI.GetPROJVersionMicro();
+  }
+
 }

@@ -42,6 +42,11 @@ public class ogr implements ogrConstants {
     return (cPtr == 0) ? null : new Geometry(cPtr, true);
   }
 
+  public static Geometry CreateGeometryFromEsriJson(String input_string) {
+    long cPtr = ogrJNI.CreateGeometryFromEsriJson(input_string);
+    return (cPtr == 0) ? null : new Geometry(cPtr, true);
+  }
+
   public static Geometry BuildPolygonFromEdges(Geometry hLineCollection, int bBestEffort, int bAutoClose, double dfTolerance) {
     long cPtr = ogrJNI.BuildPolygonFromEdges__SWIG_0(Geometry.getCPtr(hLineCollection), hLineCollection, bBestEffort, bAutoClose, dfTolerance);
     return (cPtr == 0) ? null : new Geometry(cPtr, true);

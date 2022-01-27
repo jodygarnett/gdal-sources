@@ -450,6 +450,11 @@ public class Band extends MajorObject {
     return gdalJNI.Band_AdviseRead__SWIG_4(swigCPtr, this, xoff, yoff, xsize, ysize);
   }
 
+  public MDArray AsMDArray() {
+    long cPtr = gdalJNI.Band_AsMDArray(swigCPtr, this);
+    return (cPtr == 0) ? null : new MDArray(cPtr, true);
+  }
+
   public int ReadRaster_Direct(int xoff, int yoff, int xsize, int ysize, int buf_xsize, int buf_ysize, int buf_type, java.nio.ByteBuffer nioBuffer, int nPixelSpace, int nLineSpace) {
     return gdalJNI.Band_ReadRaster_Direct__SWIG_0(swigCPtr, this, xoff, yoff, xsize, ysize, buf_xsize, buf_ysize, buf_type, nioBuffer, nPixelSpace, nLineSpace);
   }

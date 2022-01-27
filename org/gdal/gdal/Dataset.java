@@ -100,6 +100,11 @@ public class Dataset extends MajorObject {
     return ret;
   }
 
+  public Group GetRootGroup() {
+    long cPtr = gdalJNI.Dataset_GetRootGroup(swigCPtr, this);
+    return (cPtr == 0) ? null : new Group(cPtr, true);
+  }
+
   public String GetProjection() {
     return gdalJNI.Dataset_GetProjection(swigCPtr, this);
   }

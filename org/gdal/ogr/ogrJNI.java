@@ -285,6 +285,7 @@ public class ogrJNI {
   public final static native long CreateGeometryFromWkt__SWIG_1(String jarg1);
   public final static native long CreateGeometryFromGML(String jarg1);
   public final static native long CreateGeometryFromJson(String jarg1);
+  public final static native long CreateGeometryFromEsriJson(String jarg1);
   public final static native long BuildPolygonFromEdges__SWIG_0(long jarg1, Geometry jarg1_, int jarg2, int jarg3, double jarg4);
   public final static native long BuildPolygonFromEdges__SWIG_1(long jarg1, Geometry jarg1_, int jarg2, int jarg3);
   public final static native long BuildPolygonFromEdges__SWIG_2(long jarg1, Geometry jarg1_, int jarg2);
@@ -356,6 +357,7 @@ public class ogrJNI {
   public final static native long Geometry_GetBoundary(long jarg1, Geometry jarg1_);
   public final static native long Geometry_ConvexHull(long jarg1, Geometry jarg1_);
   public final static native long Geometry_MakeValid(long jarg1, Geometry jarg1_);
+  public final static native long Geometry_RemoveLowerDimensionSubGeoms(long jarg1, Geometry jarg1_);
   public final static native long Geometry_Buffer__SWIG_0(long jarg1, Geometry jarg1_, double jarg2, int jarg3);
   public final static native long Geometry_Buffer__SWIG_1(long jarg1, Geometry jarg1_, double jarg2);
   public final static native long Geometry_Intersection(long jarg1, Geometry jarg1_, long jarg2, Geometry jarg2_);
@@ -382,7 +384,7 @@ public class ogrJNI {
   public final static native boolean Geometry_Contains(long jarg1, Geometry jarg1_, long jarg2, Geometry jarg2_);
   public final static native boolean Geometry_Overlaps(long jarg1, Geometry jarg1_, long jarg2, Geometry jarg2_);
   public final static native int Geometry_TransformTo(long jarg1, Geometry jarg1_, long jarg2, SpatialReference jarg2_);
-  public final static native int Geometry_Transform(long jarg1, Geometry jarg1_, long jarg2, CoordinateTransformation jarg2_);
+  public final static native int Geometry_Transform__SWIG_0(long jarg1, Geometry jarg1_, long jarg2, CoordinateTransformation jarg2_);
   public final static native long Geometry_GetSpatialReference(long jarg1, Geometry jarg1_);
   public final static native void Geometry_AssignSpatialReference(long jarg1, Geometry jarg1_, long jarg2, SpatialReference jarg2_);
   public final static native void Geometry_CloseRings(long jarg1, Geometry jarg1_);
@@ -409,9 +411,14 @@ public class ogrJNI {
   public final static native long Geometry_GetCurveGeometry__SWIG_0(long jarg1, Geometry jarg1_, java.util.Vector jarg2);
   public final static native long Geometry_GetCurveGeometry__SWIG_1(long jarg1, Geometry jarg1_);
   public final static native long Geometry_Value(long jarg1, Geometry jarg1_, double jarg2);
+  public final static native long Geometry_Transform__SWIG_1(long jarg1, Geometry jarg1_, long jarg2, GeomTransformer jarg2_);
   public final static native long new_Geometry__SWIG_0(int jarg1, String jarg2, byte[] jarg3, String jarg5);
   public final static native long new_Geometry__SWIG_1(int jarg1);
   public final static native String Geometry_ExportToWkt__SWIG_1(long jarg1, Geometry jarg1_);
+  public final static native long new_GeomTransformer__SWIG_0(long jarg1, CoordinateTransformation jarg1_, java.util.Vector jarg2);
+  public final static native long new_GeomTransformer__SWIG_1(long jarg1, CoordinateTransformation jarg1_);
+  public final static native void delete_GeomTransformer(long jarg1);
+  public final static native long GeomTransformer_Transform(long jarg1, GeomTransformer jarg1_, long jarg2, Geometry jarg2_);
   public final static native int GetDriverCount();
   public final static native int GetOpenDSCount();
   public final static native int SetGenerate_DB2_V72_BYTE_ORDER(int jarg1);

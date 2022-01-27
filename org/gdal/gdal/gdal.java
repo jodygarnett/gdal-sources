@@ -196,6 +196,10 @@ public class gdal {
     return gdalJNI.Unlink(utf8_path);
   }
 
+  public static boolean UnlinkBatch(java.util.Vector files) {
+    return gdalJNI.UnlinkBatch(files);
+  }
+
   public static int HasThreadSupport() {
     return gdalJNI.HasThreadSupport();
   }
@@ -488,6 +492,26 @@ public class gdal {
     return gdalJNI.ContourGenerateEx__SWIG_3(Band.getCPtr(srcBand), srcBand, Layer.getCPtr(dstLayer), dstLayer);
   }
 
+  public static Dataset ViewshedGenerate(Band srcBand, String driverName, String targetRasterName, SWIGTYPE_p_p_char creationOptions, double observerX, double observerY, double observerHeight, double targetHeight, double visibleVal, double invisibleVal, double outOfRangeVal, double noDataVal, double dfCurvCoeff, ViewshedMode mode, double maxDistance, ProgressCallback callback, ViewshedOutputType heightMode, SWIGTYPE_p_p_char papszOptions) {
+    long cPtr = gdalJNI.ViewshedGenerate__SWIG_0(Band.getCPtr(srcBand), srcBand, driverName, targetRasterName, SWIGTYPE_p_p_char.getCPtr(creationOptions), observerX, observerY, observerHeight, targetHeight, visibleVal, invisibleVal, outOfRangeVal, noDataVal, dfCurvCoeff, mode.swigValue(), maxDistance, callback, heightMode.swigValue(), SWIGTYPE_p_p_char.getCPtr(papszOptions));
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public static Dataset ViewshedGenerate(Band srcBand, String driverName, String targetRasterName, SWIGTYPE_p_p_char creationOptions, double observerX, double observerY, double observerHeight, double targetHeight, double visibleVal, double invisibleVal, double outOfRangeVal, double noDataVal, double dfCurvCoeff, ViewshedMode mode, double maxDistance, ProgressCallback callback, ViewshedOutputType heightMode) {
+    long cPtr = gdalJNI.ViewshedGenerate__SWIG_1(Band.getCPtr(srcBand), srcBand, driverName, targetRasterName, SWIGTYPE_p_p_char.getCPtr(creationOptions), observerX, observerY, observerHeight, targetHeight, visibleVal, invisibleVal, outOfRangeVal, noDataVal, dfCurvCoeff, mode.swigValue(), maxDistance, callback, heightMode.swigValue());
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public static Dataset ViewshedGenerate(Band srcBand, String driverName, String targetRasterName, SWIGTYPE_p_p_char creationOptions, double observerX, double observerY, double observerHeight, double targetHeight, double visibleVal, double invisibleVal, double outOfRangeVal, double noDataVal, double dfCurvCoeff, ViewshedMode mode, double maxDistance, ProgressCallback callback) {
+    long cPtr = gdalJNI.ViewshedGenerate__SWIG_2(Band.getCPtr(srcBand), srcBand, driverName, targetRasterName, SWIGTYPE_p_p_char.getCPtr(creationOptions), observerX, observerY, observerHeight, targetHeight, visibleVal, invisibleVal, outOfRangeVal, noDataVal, dfCurvCoeff, mode.swigValue(), maxDistance, callback);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public static Dataset ViewshedGenerate(Band srcBand, String driverName, String targetRasterName, SWIGTYPE_p_p_char creationOptions, double observerX, double observerY, double observerHeight, double targetHeight, double visibleVal, double invisibleVal, double outOfRangeVal, double noDataVal, double dfCurvCoeff, ViewshedMode mode, double maxDistance) {
+    long cPtr = gdalJNI.ViewshedGenerate__SWIG_4(Band.getCPtr(srcBand), srcBand, driverName, targetRasterName, SWIGTYPE_p_p_char.getCPtr(creationOptions), observerX, observerY, observerHeight, targetHeight, visibleVal, invisibleVal, outOfRangeVal, noDataVal, dfCurvCoeff, mode.swigValue(), maxDistance);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
   public static Dataset AutoCreateWarpedVRT(Dataset src_ds, String src_wkt, String dst_wkt, int eResampleAlg, double maxerror) {
     long cPtr = gdalJNI.AutoCreateWarpedVRT__SWIG_0(Dataset.getCPtr(src_ds), src_ds, src_wkt, dst_wkt, eResampleAlg, maxerror);
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
@@ -737,6 +761,10 @@ public class gdal {
     return gdalJNI.GDALInfo(Dataset.getCPtr(hDataset), hDataset, InfoOptions.getCPtr(infoOptions), infoOptions);
   }
 
+  public static String GDALMultiDimInfo(Dataset hDataset, MultiDimInfoOptions infoOptions) {
+    return gdalJNI.GDALMultiDimInfo(Dataset.getCPtr(hDataset), hDataset, MultiDimInfoOptions.getCPtr(infoOptions), infoOptions);
+  }
+
   public static Dataset Translate(String dest, Dataset dataset, TranslateOptions translateOptions, ProgressCallback callback) {
     long cPtr = gdalJNI.Translate__SWIG_0(dest, Dataset.getCPtr(dataset), dataset, TranslateOptions.getCPtr(translateOptions), translateOptions, callback);
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
@@ -856,6 +884,16 @@ public class gdal {
 
   public static Dataset BuildVRT(String dest, java.util.Vector source_filenames, BuildVRTOptions options) {
     long cPtr = gdalJNI.BuildVRT__SWIG_5(dest, source_filenames, BuildVRTOptions.getCPtr(options), options);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public static Dataset MultiDimTranslate(String dest, Dataset[] object_list_count, MultiDimTranslateOptions multiDimTranslateOptions, ProgressCallback callback) {
+    long cPtr = gdalJNI.MultiDimTranslate__SWIG_0(dest, object_list_count, MultiDimTranslateOptions.getCPtr(multiDimTranslateOptions), multiDimTranslateOptions, callback);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public static Dataset MultiDimTranslate(String dest, Dataset[] object_list_count, MultiDimTranslateOptions multiDimTranslateOptions) {
+    long cPtr = gdalJNI.MultiDimTranslate__SWIG_2(dest, object_list_count, MultiDimTranslateOptions.getCPtr(multiDimTranslateOptions), multiDimTranslateOptions);
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
   }
 

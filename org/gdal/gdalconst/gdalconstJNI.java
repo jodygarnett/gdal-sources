@@ -102,6 +102,7 @@ public class gdalconstJNI {
   public final static native int OF_RASTER_get();
   public final static native int OF_VECTOR_get();
   public final static native int OF_GNM_get();
+  public final static native int OF_MULTIDIM_RASTER_get();
   public final static native int OF_READONLY_get();
   public final static native int OF_UPDATE_get();
   public final static native int OF_SHARED_get();
@@ -125,6 +126,11 @@ public class gdalconstJNI {
   public final static native String DCAP_NOTNULL_FIELDS_get();
   public final static native String DCAP_DEFAULT_FIELDS_get();
   public final static native String DCAP_NOTNULL_GEOMFIELDS_get();
+  public final static native String DIM_TYPE_HORIZONTAL_X_get();
+  public final static native String DIM_TYPE_HORIZONTAL_Y_get();
+  public final static native String DIM_TYPE_VERTICAL_get();
+  public final static native String DIM_TYPE_TEMPORAL_get();
+  public final static native String DIM_TYPE_PARAMETRIC_get();
   public final static native int CPLES_BackslashQuotable_get();
   public final static native int CPLES_XML_get();
   public final static native int CPLES_URL_get();

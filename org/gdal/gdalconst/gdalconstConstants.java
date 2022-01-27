@@ -90,6 +90,7 @@ public interface gdalconstConstants {
   public final static int OF_RASTER = gdalconstJNI.OF_RASTER_get();
   public final static int OF_VECTOR = gdalconstJNI.OF_VECTOR_get();
   public final static int OF_GNM = gdalconstJNI.OF_GNM_get();
+  public final static int OF_MULTIDIM_RASTER = gdalconstJNI.OF_MULTIDIM_RASTER_get();
   public final static int OF_READONLY = gdalconstJNI.OF_READONLY_get();
   public final static int OF_UPDATE = gdalconstJNI.OF_UPDATE_get();
   public final static int OF_SHARED = gdalconstJNI.OF_SHARED_get();
@@ -113,6 +114,11 @@ public interface gdalconstConstants {
   public final static String DCAP_NOTNULL_FIELDS = gdalconstJNI.DCAP_NOTNULL_FIELDS_get();
   public final static String DCAP_DEFAULT_FIELDS = gdalconstJNI.DCAP_DEFAULT_FIELDS_get();
   public final static String DCAP_NOTNULL_GEOMFIELDS = gdalconstJNI.DCAP_NOTNULL_GEOMFIELDS_get();
+  public final static String DIM_TYPE_HORIZONTAL_X = gdalconstJNI.DIM_TYPE_HORIZONTAL_X_get();
+  public final static String DIM_TYPE_HORIZONTAL_Y = gdalconstJNI.DIM_TYPE_HORIZONTAL_Y_get();
+  public final static String DIM_TYPE_VERTICAL = gdalconstJNI.DIM_TYPE_VERTICAL_get();
+  public final static String DIM_TYPE_TEMPORAL = gdalconstJNI.DIM_TYPE_TEMPORAL_get();
+  public final static String DIM_TYPE_PARAMETRIC = gdalconstJNI.DIM_TYPE_PARAMETRIC_get();
   public final static int CPLES_BackslashQuotable = gdalconstJNI.CPLES_BackslashQuotable_get();
   public final static int CPLES_XML = gdalconstJNI.CPLES_XML_get();
   public final static int CPLES_URL = gdalconstJNI.CPLES_URL_get();

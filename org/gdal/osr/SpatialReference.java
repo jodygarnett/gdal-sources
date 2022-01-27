@@ -137,6 +137,10 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_IsGeographic(swigCPtr, this);
   }
 
+  public int IsDerivedGeographic() {
+    return osrJNI.SpatialReference_IsDerivedGeographic(swigCPtr, this);
+  }
+
   public int IsProjected() {
     return osrJNI.SpatialReference_IsProjected(swigCPtr, this);
   }
@@ -234,6 +238,10 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_GetAxisName(swigCPtr, this, target_key, iAxis);
   }
 
+  public int GetAxesCount() {
+    return osrJNI.SpatialReference_GetAxesCount(swigCPtr, this);
+  }
+
   public int GetAxisOrientation(String target_key, int iAxis) {
     return osrJNI.SpatialReference_GetAxisOrientation(swigCPtr, this, target_key, iAxis);
   }
@@ -248,6 +256,10 @@ public class SpatialReference implements Cloneable {
 
   public int[] GetDataAxisToSRSAxisMapping(SWIGTYPE_p_int nLen, SWIGTYPE_p_p_int pList) {
     return osrJNI.SpatialReference_GetDataAxisToSRSAxisMapping(swigCPtr, this, SWIGTYPE_p_int.getCPtr(nLen), SWIGTYPE_p_p_int.getCPtr(pList));
+  }
+
+  public int SetDataAxisToSRSAxisMapping(int[] nList) {
+    return osrJNI.SpatialReference_SetDataAxisToSRSAxisMapping(swigCPtr, this, nList);
   }
 
   public int SetUTM(int zone, int north) {
@@ -486,6 +498,10 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_SetVDG(swigCPtr, this, clong, fe, fn);
   }
 
+  public int SetVerticalPerspective(double topoOriginLat, double topoOriginLon, double topoOriginHeight, double viewPointHeight, double fe, double fn) {
+    return osrJNI.SpatialReference_SetVerticalPerspective(swigCPtr, this, topoOriginLat, topoOriginLon, topoOriginHeight, viewPointHeight, fe, fn);
+  }
+
   public int SetWellKnownGeogCS(String name) {
     return osrJNI.SpatialReference_SetWellKnownGeogCS(swigCPtr, this, name);
   }
@@ -502,8 +518,16 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_SetTOWGS84(swigCPtr, this, p1, p2, p3, p4, p5, p6, p7);
   }
 
+  public boolean HasTOWGS84() {
+    return osrJNI.SpatialReference_HasTOWGS84(swigCPtr, this);
+  }
+
   public int GetTOWGS84(double[] argout) {
     return osrJNI.SpatialReference_GetTOWGS84(swigCPtr, this, argout);
+  }
+
+  public int AddGuessedTOWGS84() {
+    return osrJNI.SpatialReference_AddGuessedTOWGS84(swigCPtr, this);
   }
 
   public int SetLocalCS(String pszName) {
@@ -650,6 +674,14 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_ExportToPrettyWkt__SWIG_1(swigCPtr, this, argout);
   }
 
+  public int ExportToPROJJSON(String[] argout, java.util.Vector options) {
+    return osrJNI.SpatialReference_ExportToPROJJSON__SWIG_0(swigCPtr, this, argout, options);
+  }
+
+  public int ExportToPROJJSON(String[] argout) {
+    return osrJNI.SpatialReference_ExportToPROJJSON__SWIG_1(swigCPtr, this, argout);
+  }
+
   public int ExportToProj4(String[] argout) {
     return osrJNI.SpatialReference_ExportToProj4(swigCPtr, this, argout);
   }
@@ -704,6 +736,14 @@ public class SpatialReference implements Cloneable {
   public SpatialReference ConvertToOtherProjection(String other_projection) {
     long cPtr = osrJNI.SpatialReference_ConvertToOtherProjection__SWIG_1(swigCPtr, this, other_projection);
     return (cPtr == 0) ? null : new SpatialReference(cPtr, true);
+  }
+
+  public int PromoteTo3D(String name) {
+    return osrJNI.SpatialReference_PromoteTo3D__SWIG_0(swigCPtr, this, name);
+  }
+
+  public int PromoteTo3D() {
+    return osrJNI.SpatialReference_PromoteTo3D__SWIG_1(swigCPtr, this);
   }
 
 }

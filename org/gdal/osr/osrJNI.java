@@ -41,6 +41,7 @@ public class osrJNI {
   public final static native int SpatialReference_IsSameGeogCS(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_);
   public final static native int SpatialReference_IsSameVertCS(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_);
   public final static native int SpatialReference_IsGeographic(long jarg1, SpatialReference jarg1_);
+  public final static native int SpatialReference_IsDerivedGeographic(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_IsProjected(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_IsCompound(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_IsGeocentric(long jarg1, SpatialReference jarg1_);
@@ -65,10 +66,12 @@ public class osrJNI {
   public final static native String SpatialReference_GetAuthorityName(long jarg1, SpatialReference jarg1_, String jarg2);
   public final static native long SpatialReference_GetAreaOfUse(long jarg1, SpatialReference jarg1_);
   public final static native String SpatialReference_GetAxisName(long jarg1, SpatialReference jarg1_, String jarg2, int jarg3);
+  public final static native int SpatialReference_GetAxesCount(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_GetAxisOrientation(long jarg1, SpatialReference jarg1_, String jarg2, int jarg3);
   public final static native int SpatialReference_GetAxisMappingStrategy(long jarg1, SpatialReference jarg1_);
   public final static native void SpatialReference_SetAxisMappingStrategy(long jarg1, SpatialReference jarg1_, int jarg2);
   public final static native int[] SpatialReference_GetDataAxisToSRSAxisMapping(long jarg1, SpatialReference jarg1_, long jarg2, long jarg3);
+  public final static native int SpatialReference_SetDataAxisToSRSAxisMapping(long jarg1, SpatialReference jarg1_, int[] jarg2);
   public final static native int SpatialReference_SetUTM__SWIG_0(long jarg1, SpatialReference jarg1_, int jarg2, int jarg3);
   public final static native int SpatialReference_SetUTM__SWIG_1(long jarg1, SpatialReference jarg1_, int jarg2);
   public final static native int SpatialReference_GetUTMZone(long jarg1, SpatialReference jarg1_);
@@ -128,11 +131,14 @@ public class osrJNI {
   public final static native int SpatialReference_SetTMG(long jarg1, SpatialReference jarg1_, double jarg2, double jarg3, double jarg4, double jarg5);
   public final static native int SpatialReference_SetTMSO(long jarg1, SpatialReference jarg1_, double jarg2, double jarg3, double jarg4, double jarg5, double jarg6);
   public final static native int SpatialReference_SetVDG(long jarg1, SpatialReference jarg1_, double jarg2, double jarg3, double jarg4);
+  public final static native int SpatialReference_SetVerticalPerspective(long jarg1, SpatialReference jarg1_, double jarg2, double jarg3, double jarg4, double jarg5, double jarg6, double jarg7);
   public final static native int SpatialReference_SetWellKnownGeogCS(long jarg1, SpatialReference jarg1_, String jarg2);
   public final static native int SpatialReference_SetFromUserInput(long jarg1, SpatialReference jarg1_, String jarg2);
   public final static native int SpatialReference_CopyGeogCSFrom(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_);
   public final static native int SpatialReference_SetTOWGS84(long jarg1, SpatialReference jarg1_, double jarg2, double jarg3, double jarg4, double jarg5, double jarg6, double jarg7, double jarg8);
+  public final static native boolean SpatialReference_HasTOWGS84(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_GetTOWGS84(long jarg1, SpatialReference jarg1_, double[] jarg2);
+  public final static native int SpatialReference_AddGuessedTOWGS84(long jarg1, SpatialReference jarg1_);
   public final static native int SpatialReference_SetLocalCS(long jarg1, SpatialReference jarg1_, String jarg2);
   public final static native int SpatialReference_SetGeogCS__SWIG_0(long jarg1, SpatialReference jarg1_, String jarg2, String jarg3, String jarg4, double jarg5, double jarg6, String jarg7, double jarg8, String jarg9, double jarg10);
   public final static native int SpatialReference_SetGeogCS__SWIG_1(long jarg1, SpatialReference jarg1_, String jarg2, String jarg3, String jarg4, double jarg5, double jarg6, String jarg7, double jarg8, String jarg9);
@@ -169,6 +175,8 @@ public class osrJNI {
   public final static native int SpatialReference_ExportToWkt__SWIG_1(long jarg1, SpatialReference jarg1_, String[] jarg2);
   public final static native int SpatialReference_ExportToPrettyWkt__SWIG_0(long jarg1, SpatialReference jarg1_, String[] jarg2, int jarg3);
   public final static native int SpatialReference_ExportToPrettyWkt__SWIG_1(long jarg1, SpatialReference jarg1_, String[] jarg2);
+  public final static native int SpatialReference_ExportToPROJJSON__SWIG_0(long jarg1, SpatialReference jarg1_, String[] jarg2, java.util.Vector jarg3);
+  public final static native int SpatialReference_ExportToPROJJSON__SWIG_1(long jarg1, SpatialReference jarg1_, String[] jarg2);
   public final static native int SpatialReference_ExportToProj4(long jarg1, SpatialReference jarg1_, String[] jarg2);
   public final static native int SpatialReference_ExportToPCI(long jarg1, SpatialReference jarg1_, String[] jarg2, String[] jarg3, double[] jarg4);
   public final static native int SpatialReference_ExportToUSGS(long jarg1, SpatialReference jarg1_, int[] jarg2, int[] jarg3, double[] jarg4, int[] jarg5);
@@ -182,6 +190,8 @@ public class osrJNI {
   public final static native int SpatialReference_MorphFromESRI(long jarg1, SpatialReference jarg1_);
   public final static native long SpatialReference_ConvertToOtherProjection__SWIG_0(long jarg1, SpatialReference jarg1_, String jarg2, java.util.Vector jarg3);
   public final static native long SpatialReference_ConvertToOtherProjection__SWIG_1(long jarg1, SpatialReference jarg1_, String jarg2);
+  public final static native int SpatialReference_PromoteTo3D__SWIG_0(long jarg1, SpatialReference jarg1_, String jarg2);
+  public final static native int SpatialReference_PromoteTo3D__SWIG_1(long jarg1, SpatialReference jarg1_);
   public final static native long new_CoordinateTransformationOptions();
   public final static native void delete_CoordinateTransformationOptions(long jarg1);
   public final static native boolean CoordinateTransformationOptions_SetAreaOfInterest(long jarg1, CoordinateTransformationOptions jarg1_, double jarg2, double jarg3, double jarg4, double jarg5);
@@ -196,4 +206,10 @@ public class osrJNI {
   public final static native void CoordinateTransformation_TransformPoints(long jarg1, CoordinateTransformation jarg1_, double[][] jarg2);
   public final static native long CreateCoordinateTransformation__SWIG_0(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_, long jarg3, CoordinateTransformationOptions jarg3_);
   public final static native long CreateCoordinateTransformation__SWIG_1(long jarg1, SpatialReference jarg1_, long jarg2, SpatialReference jarg2_);
+  public final static native void SetPROJSearchPath(String jarg1);
+  public final static native void SetPROJSearchPaths(java.util.Vector jarg1);
+  public final static native java.util.Vector GetPROJSearchPaths();
+  public final static native int GetPROJVersionMajor();
+  public final static native int GetPROJVersionMinor();
+  public final static native int GetPROJVersionMicro();
 }

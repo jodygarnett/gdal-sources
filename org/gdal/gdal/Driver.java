@@ -90,6 +90,21 @@ public class Driver extends MajorObject {
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
   }
 
+  public Dataset CreateMultiDimensional(String utf8_path, java.util.Vector root_group_options, java.util.Vector options) {
+    long cPtr = gdalJNI.Driver_CreateMultiDimensional__SWIG_0(swigCPtr, this, utf8_path, root_group_options, options);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public Dataset CreateMultiDimensional(String utf8_path, java.util.Vector root_group_options) {
+    long cPtr = gdalJNI.Driver_CreateMultiDimensional__SWIG_1(swigCPtr, this, utf8_path, root_group_options);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
+  public Dataset CreateMultiDimensional(String utf8_path) {
+    long cPtr = gdalJNI.Driver_CreateMultiDimensional__SWIG_2(swigCPtr, this, utf8_path);
+    return (cPtr == 0) ? null : new Dataset(cPtr, true);
+  }
+
   public Dataset CreateCopy(String utf8_path, Dataset src, int strict, java.util.Vector options, ProgressCallback callback) {
     long cPtr = gdalJNI.Driver_CreateCopy__SWIG_0(swigCPtr, this, utf8_path, Dataset.getCPtr(src), src, strict, options, callback);
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
