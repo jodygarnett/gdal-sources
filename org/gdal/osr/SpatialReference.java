@@ -746,4 +746,12 @@ public class SpatialReference implements Cloneable {
     return osrJNI.SpatialReference_PromoteTo3D__SWIG_1(swigCPtr, this);
   }
 
+  public int DemoteTo2D(String name) {
+    return osrJNI.SpatialReference_DemoteTo2D__SWIG_0(swigCPtr, this, name);
+  }
+
+  public int DemoteTo2D() {
+    return osrJNI.SpatialReference_DemoteTo2D__SWIG_1(swigCPtr, this);
+  }
+
 }

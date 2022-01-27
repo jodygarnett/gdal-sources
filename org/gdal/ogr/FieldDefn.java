@@ -81,6 +81,18 @@ public class FieldDefn {
     ogrJNI.FieldDefn_SetName(swigCPtr, this, name);
   }
 
+  public String GetAlternativeName() {
+    return ogrJNI.FieldDefn_GetAlternativeName(swigCPtr, this);
+  }
+
+  public String GetAlternativeNameRef() {
+    return ogrJNI.FieldDefn_GetAlternativeNameRef(swigCPtr, this);
+  }
+
+  public void SetAlternativeName(String alternativeName) {
+    ogrJNI.FieldDefn_SetAlternativeName(swigCPtr, this, alternativeName);
+  }
+
   public int GetFieldType() {
     return ogrJNI.FieldDefn_GetFieldType(swigCPtr, this);
   }
@@ -143,6 +155,14 @@ public class FieldDefn {
 
   public void SetNullable(int bNullable) {
     ogrJNI.FieldDefn_SetNullable(swigCPtr, this, bNullable);
+  }
+
+  public int IsUnique() {
+    return ogrJNI.FieldDefn_IsUnique(swigCPtr, this);
+  }
+
+  public void SetUnique(int bUnique) {
+    ogrJNI.FieldDefn_SetUnique(swigCPtr, this, bUnique);
   }
 
   public String GetDefault() {

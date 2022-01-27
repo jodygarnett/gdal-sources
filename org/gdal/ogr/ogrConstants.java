@@ -106,8 +106,10 @@ public interface ogrConstants {
   public final static int ALTER_TYPE_FLAG = 2;
   public final static int ALTER_WIDTH_PRECISION_FLAG = 4;
   public final static int ALTER_NULLABLE_FLAG = 8;
+  public final static int ALTER__FLAG = 8;
   public final static int ALTER_DEFAULT_FLAG = 16;
-  public final static int ALTER_ALL_FLAG = 1+2+4+8+16;
+  public final static int ALTER_UNIQUE_FLAG = 32;
+  public final static int ALTER_ALL_FLAG = 1+2+4+8+16+32;
   public final static int F_VAL_NULL = 0x00000001;
   public final static int F_VAL_GEOM_TYPE = 0x00000002;
   public final static int F_VAL_WIDTH = 0x00000004;

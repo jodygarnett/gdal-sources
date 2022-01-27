@@ -359,6 +359,10 @@ public class Dataset extends MajorObject {
     gdalJNI.Dataset_SetStyleTable(swigCPtr, this, StyleTable.getCPtr(table), table);
   }
 
+  public int AbortSQL() {
+    return gdalJNI.Dataset_AbortSQL(swigCPtr, this);
+  }
+
   public int StartTransaction(int force) {
     return gdalJNI.Dataset_StartTransaction__SWIG_0(swigCPtr, this, force);
   }
@@ -373,6 +377,10 @@ public class Dataset extends MajorObject {
 
   public int RollbackTransaction() {
     return gdalJNI.Dataset_RollbackTransaction(swigCPtr, this);
+  }
+
+  public void ClearStatistics() {
+    gdalJNI.Dataset_ClearStatistics(swigCPtr, this);
   }
 
   public int ReadRaster_Direct(int xoff, int yoff, int xsize, int ysize, int buf_xsize, int buf_ysize, int buf_type, java.nio.ByteBuffer nioBuffer, int[] band_list, int nPixelSpace, int nLineSpace, int nBandSpace) {

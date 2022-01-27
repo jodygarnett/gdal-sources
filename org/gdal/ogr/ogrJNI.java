@@ -67,6 +67,7 @@ public class ogrJNI {
   public final static native long DataSource_ExecuteSQL__SWIG_0(long jarg1, DataSource jarg1_, String jarg2, long jarg3, Geometry jarg3_, String jarg4);
   public final static native long DataSource_ExecuteSQL__SWIG_1(long jarg1, DataSource jarg1_, String jarg2, long jarg3, Geometry jarg3_);
   public final static native long DataSource_ExecuteSQL__SWIG_2(long jarg1, DataSource jarg1_, String jarg2);
+  public final static native int DataSource_AbortSQL(long jarg1, DataSource jarg1_);
   public final static native void DataSource_ReleaseResultSet(long jarg1, DataSource jarg1_, long jarg2, Layer jarg2_);
   public final static native long DataSource_GetStyleTable(long jarg1, DataSource jarg1_);
   public final static native void DataSource_SetStyleTable(long jarg1, DataSource jarg1_, long jarg2, StyleTable jarg2_);
@@ -245,6 +246,9 @@ public class ogrJNI {
   public final static native String FieldDefn_GetName(long jarg1, FieldDefn jarg1_);
   public final static native String FieldDefn_GetNameRef(long jarg1, FieldDefn jarg1_);
   public final static native void FieldDefn_SetName(long jarg1, FieldDefn jarg1_, String jarg2);
+  public final static native String FieldDefn_GetAlternativeName(long jarg1, FieldDefn jarg1_);
+  public final static native String FieldDefn_GetAlternativeNameRef(long jarg1, FieldDefn jarg1_);
+  public final static native void FieldDefn_SetAlternativeName(long jarg1, FieldDefn jarg1_, String jarg2);
   public final static native int FieldDefn_GetFieldType(long jarg1, FieldDefn jarg1_);
   public final static native void FieldDefn_SetType(long jarg1, FieldDefn jarg1_, int jarg2);
   public final static native int FieldDefn_GetSubType(long jarg1, FieldDefn jarg1_);
@@ -261,6 +265,8 @@ public class ogrJNI {
   public final static native void FieldDefn_SetIgnored(long jarg1, FieldDefn jarg1_, int jarg2);
   public final static native int FieldDefn_IsNullable(long jarg1, FieldDefn jarg1_);
   public final static native void FieldDefn_SetNullable(long jarg1, FieldDefn jarg1_, int jarg2);
+  public final static native int FieldDefn_IsUnique(long jarg1, FieldDefn jarg1_);
+  public final static native void FieldDefn_SetUnique(long jarg1, FieldDefn jarg1_, int jarg2);
   public final static native String FieldDefn_GetDefault(long jarg1, FieldDefn jarg1_);
   public final static native void FieldDefn_SetDefault(long jarg1, FieldDefn jarg1_, String jarg2);
   public final static native int FieldDefn_IsDefaultDriverSpecific(long jarg1, FieldDefn jarg1_);

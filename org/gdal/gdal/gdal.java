@@ -72,6 +72,10 @@ public class gdal {
     return gdalJNI.SetErrorHandler__SWIG_2();
   }
 
+  public static void SetCurrentErrorHandlerCatchDebug(int bCatchDebug) {
+    gdalJNI.SetCurrentErrorHandlerCatchDebug(bCatchDebug);
+  }
+
   public static int PushErrorHandler(String pszCallbackName) {
     return gdalJNI.PushErrorHandler__SWIG_0(pszCallbackName);
   }

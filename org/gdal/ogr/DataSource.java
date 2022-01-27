@@ -204,6 +204,10 @@ public class DataSource extends MajorObject {
     return ret;
   }
 
+  public int AbortSQL() {
+    return ogrJNI.DataSource_AbortSQL(swigCPtr, this);
+  }
+
   public void ReleaseResultSet(Layer layer) {
     ogrJNI.DataSource_ReleaseResultSet(swigCPtr, this, Layer.getCPtrAndDisown(layer), layer);
   }

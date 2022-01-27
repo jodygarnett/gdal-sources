@@ -83,6 +83,26 @@ public class Group {
     return (cPtr == 0) ? null : new MDArray(cPtr, true);
   }
 
+  public MDArray OpenMDArrayFromFullname(String name, java.util.Vector options) {
+    long cPtr = gdalJNI.Group_OpenMDArrayFromFullname__SWIG_0(swigCPtr, this, name, options);
+    return (cPtr == 0) ? null : new MDArray(cPtr, true);
+  }
+
+  public MDArray OpenMDArrayFromFullname(String name) {
+    long cPtr = gdalJNI.Group_OpenMDArrayFromFullname__SWIG_1(swigCPtr, this, name);
+    return (cPtr == 0) ? null : new MDArray(cPtr, true);
+  }
+
+  public MDArray ResolveMDArray(String name, String starting_point, java.util.Vector options) {
+    long cPtr = gdalJNI.Group_ResolveMDArray__SWIG_0(swigCPtr, this, name, starting_point, options);
+    return (cPtr == 0) ? null : new MDArray(cPtr, true);
+  }
+
+  public MDArray ResolveMDArray(String name, String starting_point) {
+    long cPtr = gdalJNI.Group_ResolveMDArray__SWIG_1(swigCPtr, this, name, starting_point);
+    return (cPtr == 0) ? null : new MDArray(cPtr, true);
+  }
+
   public java.util.Vector GetGroupNames(java.util.Vector options) {
     return gdalJNI.Group_GetGroupNames__SWIG_0(swigCPtr, this, options);
   }
@@ -98,6 +118,16 @@ public class Group {
 
   public Group OpenGroup(String name) {
     long cPtr = gdalJNI.Group_OpenGroup__SWIG_1(swigCPtr, this, name);
+    return (cPtr == 0) ? null : new Group(cPtr, true);
+  }
+
+  public Group OpenGroupFromFullname(String name, java.util.Vector options) {
+    long cPtr = gdalJNI.Group_OpenGroupFromFullname__SWIG_0(swigCPtr, this, name, options);
+    return (cPtr == 0) ? null : new Group(cPtr, true);
+  }
+
+  public Group OpenGroupFromFullname(String name) {
+    long cPtr = gdalJNI.Group_OpenGroupFromFullname__SWIG_1(swigCPtr, this, name);
     return (cPtr == 0) ? null : new Group(cPtr, true);
   }
 

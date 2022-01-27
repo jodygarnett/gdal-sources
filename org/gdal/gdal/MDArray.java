@@ -174,4 +174,49 @@ public class MDArray {
     return (cPtr == 0) ? null : new Dataset(cPtr, true);
   }
 
+  public Statistics GetStatistics(Dataset ds, boolean approx_ok, boolean force, ProgressCallback callback) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_0(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok, force, callback);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics GetStatistics(Dataset ds, boolean approx_ok, boolean force) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_2(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok, force);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics GetStatistics(Dataset ds, boolean approx_ok) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_3(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics GetStatistics(Dataset ds) {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_4(swigCPtr, this, Dataset.getCPtr(ds), ds);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics GetStatistics() {
+    long cPtr = gdalJNI.MDArray_GetStatistics__SWIG_5(swigCPtr, this);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics ComputeStatistics(Dataset ds, boolean approx_ok, ProgressCallback callback) {
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_0(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok, callback);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics ComputeStatistics(Dataset ds, boolean approx_ok) {
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_2(swigCPtr, this, Dataset.getCPtr(ds), ds, approx_ok);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics ComputeStatistics(Dataset ds) {
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_3(swigCPtr, this, Dataset.getCPtr(ds), ds);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
+  public Statistics ComputeStatistics() {
+    long cPtr = gdalJNI.MDArray_ComputeStatistics__SWIG_4(swigCPtr, this);
+    return (cPtr == 0) ? null : new Statistics(cPtr, false);
+  }
+
 }

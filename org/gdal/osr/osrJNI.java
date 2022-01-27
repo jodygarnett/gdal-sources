@@ -192,6 +192,8 @@ public class osrJNI {
   public final static native long SpatialReference_ConvertToOtherProjection__SWIG_1(long jarg1, SpatialReference jarg1_, String jarg2);
   public final static native int SpatialReference_PromoteTo3D__SWIG_0(long jarg1, SpatialReference jarg1_, String jarg2);
   public final static native int SpatialReference_PromoteTo3D__SWIG_1(long jarg1, SpatialReference jarg1_);
+  public final static native int SpatialReference_DemoteTo2D__SWIG_0(long jarg1, SpatialReference jarg1_, String jarg2);
+  public final static native int SpatialReference_DemoteTo2D__SWIG_1(long jarg1, SpatialReference jarg1_);
   public final static native long new_CoordinateTransformationOptions();
   public final static native void delete_CoordinateTransformationOptions(long jarg1);
   public final static native boolean CoordinateTransformationOptions_SetAreaOfInterest(long jarg1, CoordinateTransformationOptions jarg1_, double jarg2, double jarg3, double jarg4, double jarg5);
